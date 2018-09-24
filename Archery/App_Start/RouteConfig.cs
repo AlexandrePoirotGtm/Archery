@@ -11,13 +11,14 @@ namespace Archery
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            routes.MapMvcAttributeRoutes();
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
+           /* routes.MapRoute(
                 name:"AboutRoute",
                 url: "a-propos",
                 defaults: new {Controller = "home", action = "About"}
-            );
+            );*/
 
             routes.MapRoute(
                 name: "Default",
