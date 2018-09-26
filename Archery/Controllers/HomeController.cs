@@ -12,6 +12,7 @@ namespace Archery.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            ViewData["Title"] = "Acceuil";
             return View();
         }
         [Route("a-propos")]
@@ -23,6 +24,7 @@ namespace Archery.Controllers
                 ContactMail = "AlexandrePoirot2500@gmail.com",
                 CreatedDate = DateTime.Now
             };
+            ViewBag.Title = "A Propos";
             return View(modelInfo);
         }
 
