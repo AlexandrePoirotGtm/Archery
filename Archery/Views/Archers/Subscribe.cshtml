@@ -1,0 +1,35 @@
+﻿@model Archery.Models.Archer
+@{
+    ViewBag.Title = "Subscribe";
+}
+
+<h2>Nouveau Tireur</h2>
+
+@using (Html.BeginForm())
+{
+<div class="form-group">
+    @*<label class="control-label" for="exampleInputEmail">Email address</label>
+    <input type="email" name="email" class="form-control" id="exampleInputEmail" placeholder="Enter email">*@
+
+    @Html.LabelFor(x => x.Mail,"Email", new { @class="control-label"})
+    @Html.EditorFor(x => x.Mail, new {htmlAttributes = new {@class = "form-control", @placeholder = "Enter email" } })
+    
+    <label class="control-label" for="exampleInputPrenom">Prenom</label>
+    <input type="text" name="prenom" class="form-control" id="exampleInputPrenom" placeholder="Enter prenom">
+
+    <label class="control-label" for="exampleInputNom">Nom</label>
+    <input type="text" name="nom" class="form-control" id="exampleInputNom" placeholder="Enter Nom">
+
+    <label class="control-label" for="exampleInputPassword">Password</label>
+    <input type="password" name="password" class="form-control" id="exampleInputPassword" placeholder="Enter Password">
+
+    <label class="control-label" for="exampleInputEmail">Confirm Password</label>
+    <input type="password" name="confirmedPassword" class="form-control" id="exampleInputPassword" placeholder="Confirm Password">
+
+
+    <label class="control-label" for="exampleInputDate">Enter BirthDate</label>
+    <input type="date" name="birthday" class="form-control" id="exampleInputBirthDate">
+</div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+}
