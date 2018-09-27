@@ -35,7 +35,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href=@Url.Action("Index","Home")>Index <span class="sr-only">(current)</span></a></li>
                         <li>
-                            @Html.ActionLink("A Propos","about", "home",null,new{@class="navbar-brand"});
+                            @Html.ActionLink("A Propos", "about", "home", null, new { @class = "navbar-brand" });
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -72,7 +72,6 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-
         @RenderBody();
     </div>
     <footer class="panel-footer">
@@ -81,5 +80,7 @@
 
     <script src="~/Scripts/jquery-3.0.0.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    @RenderSection("SectionScripts", false)
+    
 </body>
 </html>

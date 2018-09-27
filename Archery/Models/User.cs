@@ -41,7 +41,7 @@ namespace Archery.Models
         
         
         [Required]
-        [Age(9,12,ErrorMessage = "Vous devez avoir entre {1} ans et {2} ans")]
+        [Age(9,25,ErrorMessage = "Vous devez avoir entre {1} ans")]
         [DataType(DataType.Date)]
         public DateTime BirthDate { get; set; }
     }
