@@ -22,25 +22,31 @@ namespace Archery.Models
         public string Mail { get; set; }
 
         [Required]
+        [StringLength(150)]
         [DataType(DataType.Password)]
         [RegularExpression(@"(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$", ErrorMessage = "{0} est incorrect")]
         public string Password { get; set; }
 
+        [NotMapped]
         [Compare("Password", ErrorMessage ="La Confirmation n'est pas bonne")]
         [Required]
         [DataType(DataType.Password)]
+        [StringLength(150)]
         public string ConfirmedPassword { get; set; }
 
         [Required]
+        [StringLength(50)]
         [Display(Name ="Prenom")]
         public string FirstName { get; set; }
 
         [Required]
+        [StringLength(50)]
         public string LastName { get; set; }
 
         
         
         [Required]
+        [Column(TypeName ="datetime2")]
         [Age(9,25,ErrorMessage = "Vous devez avoir entre {1} ans")]
         [DataType(DataType.Date)]
         public DateTime BirthDate { get; set; }
