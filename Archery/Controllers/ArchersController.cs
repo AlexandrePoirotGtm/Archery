@@ -1,8 +1,5 @@
 ﻿using Archery.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Archery.Controllers
@@ -18,6 +15,16 @@ namespace Archery.Controllers
         [HttpPost]
         public ActionResult Subscribe(Archer archer)
         {
+            //if (DateTime.Compare(archer.BirthDate.AddYears(9), DateTime.Today) >= 0)
+            //{
+            //    ViewBag.Erreur = "L'age est trop jeune";
+            //    return View();
+            //    ModelState.AddModelError("BirthDate", "Date de naissance invalide");
+            //}
+            if (ModelState.IsValid)
+            {
+                // return BadRequest(ModelState);
+            }
             return View();
         }
     }
