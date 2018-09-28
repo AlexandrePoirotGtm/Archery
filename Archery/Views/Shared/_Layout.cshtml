@@ -75,8 +75,18 @@
             </nav>
         </div>
     </div>
-        @RenderBody()
-    
+
+    <div class="container">
+        @if (!string.IsNullOrWhiteSpace(((string)@TempData["message"])))
+        {
+            <div class="alert alert-success">
+                @TempData["message"]
+            </div>
+        }
+    </div>
+
+    @RenderBody()
+
     <footer class="panel-footer">
         &copy; 2018
     </footer>

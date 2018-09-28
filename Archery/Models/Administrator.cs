@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Archery.Models
 {
-    public class Administrator
+    public class Administrator : User
     {
     }
 }
