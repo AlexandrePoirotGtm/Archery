@@ -9,6 +9,7 @@
 
 @using (Html.BeginForm())
 {
+    @Html.AntiForgeryToken()
     <div class="form-group">
         @Html.LabelFor(x => x.Mail, new { @class = "control-label" })
         @Html.EditorFor(x => x.Mail, new { htmlAttributes = new { @class = "form-control", @placeholder = "Entrer email" } })

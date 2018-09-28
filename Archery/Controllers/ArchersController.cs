@@ -6,22 +6,21 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
+using Archery.Tools;
 
 namespace Archery.Controllers
 {
     public class ArchersController :  BaseController
     {
-
-        
-
-
         // GET: Players
         public ActionResult Subscribe()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult Subscribe(Archer archer)
+        [ValidateAntiForgeryToken]
+        public ActionResult Subscribe([Bind(Exclude = "ID")]Archer archer)
         {
             //if (DateTime.Compare(archer.BirthDate.AddYears(9), DateTime.Today) >= 0)
             //{
@@ -32,6 +31,7 @@ namespace Archery.Controllers
             if (ModelState.IsValid)
             {
                 // return BadRequest(ModelState);
+                archer.Password = Crypto.GenerateMD5(archer.Password);
                 db.Archers.Add(archer);
                 db.SaveChanges();
 
@@ -44,13 +44,6 @@ namespace Archery.Controllers
                 Display("Raté",Tools.MessageType.ERROR);
             }
             return View();
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-            if (!disposing)
-                this.db.Dispose();
         }
     }
 

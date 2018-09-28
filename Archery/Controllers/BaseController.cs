@@ -19,5 +19,12 @@ namespace Archery.Controllers
             var m = new Message(messageType, text);
             TempData["MESSAGE"] = m;
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            if (!disposing)
+                this.db.Dispose();
+        }
     }
 }
