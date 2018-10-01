@@ -28,20 +28,28 @@ namespace Archery.Controllers
             //    return View();
             //    ModelState.AddModelError("BirthDate", "Date de naissance invalide");
             //}
+            foreach (Archer arch in db.Archers)
+            {
+                if (arch.Mail == archer.Mail)
+                { 
+                    ModelState.AddModelError("Mail","Mail existe déja");
+                    break;
+                }
+            }
             if (ModelState.IsValid)
             {
-                // return BadRequest(ModelState);
-                archer.Password = Crypto.GenerateMD5(archer.Password);
+                archer.Password = archer.Password.CryptoMDP();
+                db.Configuration.ValidateOnSaveEnabled = false;
                 db.Archers.Add(archer);
                 db.SaveChanges();
-
+                db.Configuration.ValidateOnSaveEnabled = true; 
                 Display("Bravo a toi, tu a réussi la création d'un tireur");
                 //return View();
                 return RedirectToAction("index", "home");
             }
             else
             {
-                Display("Raté",Tools.MessageType.ERROR);
+                Display("Raté",MessageType.ERROR);
             }
             return View();
         }

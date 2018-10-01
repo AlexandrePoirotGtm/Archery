@@ -169,9 +169,10 @@
     <Compile Include="Models\Archer.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tools\Crypto.cs" />
+    <Compile Include="Tools\Extension.cs" />
     <Compile Include="Tools\Message.cs" />
     <Compile Include="Validators\Age.cs" />
+    <Compile Include="Validators\IsUnique.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

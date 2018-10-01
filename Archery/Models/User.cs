@@ -11,7 +11,6 @@ namespace Archery.Models
     public abstract class User
     {
         public int ID { get; set; }
-
         [Required(ErrorMessage ="Le Champs {0} est obligatoire.")]
         [Display(Name ="Adresse Email")]
         [StringLength(150, ErrorMessage ="Le champs {0} doit contenir {1} caractères.")]

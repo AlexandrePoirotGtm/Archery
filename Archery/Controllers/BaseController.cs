@@ -14,6 +14,7 @@ namespace Archery.Controllers
     {
         protected ArcheryDbContext db = new ArcheryDbContext();
 
+
         protected void Display(string text, MessageType messageType = MessageType.SUCCESS)
         {
             var m = new Message(messageType, text);
@@ -26,5 +27,15 @@ namespace Archery.Controllers
             if (!disposing)
                 this.db.Dispose();
         }
+
+        //protected bool IsUnique<T>(DbSet<T> List, string s) where T : class
+        //{
+        //    foreach (object v in List)
+        //    {
+        //        if (v == s)
+        //            return true;
+        //    }
+        //    return false;
+        //}
     }
 }
