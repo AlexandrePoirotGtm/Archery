@@ -163,6 +163,10 @@
     <Compile Include="Migrations\201809271418057_init.Designer.cs">
       <DependentUpon>201809271418057_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810011038286_AddUniqueEmailUser.cs" />
+    <Compile Include="Migrations\201810011038286_AddUniqueEmailUser.Designer.cs">
+      <DependentUpon>201810011038286_AddUniqueEmailUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrator.cs" />
     <Compile Include="Models\Info.cs" />
@@ -172,7 +176,8 @@
     <Compile Include="Tools\Extension.cs" />
     <Compile Include="Tools\Message.cs" />
     <Compile Include="Validators\Age.cs" />
-    <Compile Include="Validators\IsUnique.cs" />
+    <Compile Include="Validators\LicenseNumberAttribute.cs" />
+    <Compile Include="Validators\EmailAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -207,6 +212,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201809271418057_init.resx">
       <DependentUpon>201809271418057_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810011038286_AddUniqueEmailUser.resx">
+      <DependentUpon>201810011038286_AddUniqueEmailUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

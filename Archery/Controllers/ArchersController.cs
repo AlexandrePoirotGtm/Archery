@@ -28,7 +28,7 @@ namespace Archery.Controllers
             //    return View();
             //    ModelState.AddModelError("BirthDate", "Date de naissance invalide");
             //}
-            foreach (Archer arch in db.Archers)
+            /*foreach (Archer arch in db.Archers)
             {
                 if (arch.Mail == archer.Mail)
                 { 
@@ -36,6 +36,14 @@ namespace Archery.Controllers
                     break;
                 }
             }
+            foreach (Archer arch in db.Archers)
+            {
+                if (arch.LicenseNumber == archer.LicenseNumber)
+                {
+                    ModelState.AddModelError("Mail", "License existe déja");
+                    break;
+                }
+            }*/
             if (ModelState.IsValid)
             {
                 archer.Password = archer.Password.CryptoMDP();

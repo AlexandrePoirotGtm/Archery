@@ -13,6 +13,8 @@ namespace Archery.Models
         public int ID { get; set; }
         [Required(ErrorMessage ="Le Champs {0} est obligatoire.")]
         [Display(Name ="Adresse Email")]
+        [Index(IsUnique = true)]
+        [Email (ErrorMessage = "L'Email existe Déja")]
         [StringLength(150, ErrorMessage ="Le champs {0} doit contenir {1} caractères.")]
         [RegularExpression(@"^([a-zA-Z0-9_/-/.]+)@((\[[0-9]{1,3}" + 
                             @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
