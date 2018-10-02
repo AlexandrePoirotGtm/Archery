@@ -18,11 +18,4 @@ namespace Archery.Models
         [Display(Name = "Tournois")]
         public ICollection<Tournament> Tournaments { get; set; }
     }
-
-    public enum TypeArme
-    {
-        PaperBow,
-        PaintBall,
-        Ak47
-    }
 }

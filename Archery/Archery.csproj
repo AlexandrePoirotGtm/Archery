@@ -126,6 +126,11 @@
     <Content Include="Areas\BackOffice\Views\_ViewStart.cshtml" />
     <Content Include="Areas\BackOffice\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\BackOffice\Views\DashBoard\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Weapons\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Weapons\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Weapons\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Weapons\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Weapons\Index.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -160,6 +165,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\BackOffice\BackOfficeAreaRegistration.cs" />
     <Compile Include="Areas\BackOffice\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\WeaponsController.cs" />
     <Compile Include="Migrations\201810011458402_AjoutBackOffice.cs" />
     <Compile Include="Migrations\201810011458402_AjoutBackOffice.Designer.cs">
       <DependentUpon>201810011458402_AjoutBackOffice.cs</DependentUpon>
