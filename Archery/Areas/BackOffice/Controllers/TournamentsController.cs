@@ -39,6 +39,8 @@ namespace Archery.Areas.BackOffice.Controllers
         // GET: BackOffice/Tournaments/Create
         public ActionResult Create()
         {
+            MultiSelectList WeaponsValues = new MultiSelectList(db.Weapons, "ID", "Name");
+            ViewBag.Weapons = WeaponsValues;
             return View();
         }
 
