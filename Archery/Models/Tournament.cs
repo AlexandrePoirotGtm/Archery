@@ -19,18 +19,22 @@ namespace Archery.Models
         [Required]
         [Display(Name = "Date de départ")]
         [DataType(DataType.DateTime)]
-        public DateTime Start { get; set; }
+        public DateTime? Start { get; set; }
 
         [Required]
         [Display(Name = "Date de fin")]
         [DataType(DataType.DateTime)]
-        public DateTime Finish { get; set; }
+        public DateTime? Finish { get; set; }
 
         [Required]
         [Display(Name ="Lieu")]
         [StringLength(250)]
         [DataType(DataType.MultilineText)]
         public string Location { get; set; }
+
+        [Display(Name = "Description")]
+        [DataType(DataType.MultilineText)]
+        public string Description { get; set; }
 
         [Required]
         [Display(Name = "Nombre d'archer max")]
