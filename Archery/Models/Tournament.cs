@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace Archery.Models
 {
@@ -33,6 +34,7 @@ namespace Archery.Models
         public string Location { get; set; }
 
         [Display(Name = "Description")]
+        [AllowHtml]
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
 

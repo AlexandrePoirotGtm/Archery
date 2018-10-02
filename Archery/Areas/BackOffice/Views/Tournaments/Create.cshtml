@@ -83,12 +83,26 @@
 </div>
 
 @section SectionScripts{
-<script src="~/Scripts/jquery.datetimepicker.js"></script>
-<script>
-    $(function () {
-        //$("#dateStartPicker").datetimepicker.setLocale('fr');
-        $('#Start').datetimepicker();
-        $('#Finish').datetimepicker();
-    });
-</script>
+    <script src="~/Scripts/jquery.datetimepicker.js"></script>
+    <script src="~/Scripts/tinymce/tinymce.min.js"></script>
+    <script>
+        $(function () {
+            //$("#dateStartPicker").datetimepicker.setLocale('fr');
+            $('#Start').datetimepicker({
+                lang: 'fr',
+                step: 15,
+                format: 'd/m/y H:i'
+            });
+
+            $('#Finish').datetimepicker({
+                lang: 'fr',
+                step: 15,
+                format: 'd/m/y H:i'
+            });
+            $('#Start').attr('autocomplete', 'off');
+            $('#Finish').attr('autocomplete', 'off');
+
+            tinymce.init({ selector: '#Description' });
+        });
+    </script>
 }
